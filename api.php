@@ -4,14 +4,14 @@ include 'config.php';
 $ret = array(
 	'error'	=> 1,
 	'msg'	=> ':)',
-	'post'	=> arra()
+	'post'	=> array()
 );
 if(empty($_POST)){
 	die(json_encode($ret));
 }else{
-	$ret['[post'] = $_POST;
+	$ret['post'] = $_POST;
 }
-if(empty($_POST['apikey']) && $_POST['apikey'] != APIKEY){
+if(empty($_POST['api_key']) || $_POST['api_key'] != APIKEY){
 	$ret['msg'] = 'APIKEY salah!';
 	die(json_encode($ret));
 }
