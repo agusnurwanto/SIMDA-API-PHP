@@ -49,7 +49,7 @@ if(empty($data)){
 
 // print_r($data); die();
 $dbname   = $data[0]['nama'];
-$hostname = "mssql";
+$hostname = $data[0]['hostname'];
 $username = $data[0]['username'];
 $pw       = $data[0]['password'];
 $connection = "odbc:DRIVER=".DRIVER.";SERVERNAME=$hostname;DATABASE=$dbname";
