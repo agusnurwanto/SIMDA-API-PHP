@@ -16,7 +16,7 @@ Optimasi aplikasi SIPD dengan chrome extension dan plugin wordpress Semoga berma
 - Edit APIKEY disamakan dengan settingan APIKEY SIMDA di plugin wp-sipd
 - Buat database MYSQL dan import table.sql
 - Isikan nama database simda di tabel database_simda
-- akses index.php untuk melakukan testing koneksi SQL server
+- Akses index.php untuk melakukan testing koneksi SQL server
 
 ### Video tutorial:
 - Integrasi data SIPD ke SIMDA keuangan https://youtu.be/vFOsAlnxmTo
