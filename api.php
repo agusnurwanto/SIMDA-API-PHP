@@ -52,14 +52,26 @@ $dbname   = $data[0]['nama'];
 $hostname = $data[0]['hostname'];
 $username = $data[0]['username'];
 $pw       = $data[0]['password'];
+
+
 if(DRIVER){
-	$connection = "odbc:DRIVER=".DRIVER.";SERVERNAME=$hostname;DATABASE=$dbname";
+	if(DRIVER == 'odbc'){
+		$connection = "odbc:".$hostname;
+	}else{
+		$connection = "odbc:DRIVER=".DRIVER.";SERVERNAME=$hostname;DATABASE=$dbname";
+	}
 }else{
 	$connection = "sqlsrv:Server=$hostname;DATABASE=$dbname";
 }
 // print_r($connection); die();
 
 $dbh      = new PDO($connection, $username, $pw);
+
+if(DRIVER && DRIVER=='odbc'){
+	$dbh->exec('USE '.$dbname);
+}
+
+
 try {
 	$stmt = $dbh->prepare($_POST['query']);
 	$stmt->execute();

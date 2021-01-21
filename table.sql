@@ -4,12 +4,12 @@
 
 CREATE TABLE `database_simda` (
   `id` int(11) NOT NULL,
-  `hostname` varchar(50)  DEFAULT NULL,
-  `nama` varchar(50)  DEFAULT NULL,
-  `tahun` year(4)  DEFAULT NULL,
-  `username` varchar(10)  DEFAULT NULL,
-  `password` varchar(10)  DEFAULT NULL,
-  `active` tinyint(4)  DEFAULT NULL,
+  `hostname` varchar(50)  DEFAULT NULL COMMENT 'HOST atau DSN ODBC',
+  `nama` varchar(50)  DEFAULT NULL COMMENT 'Nama Database',
+  `tahun` year(4)  DEFAULT NULL COMMENT 'Tahun anggaran',
+  `username` varchar(10)  DEFAULT NULL COMMENT 'User SQL SERVER',
+  `password` varchar(10)  DEFAULT NULL COMMENT 'Password SQL SERVER',
+  `active` tinyint(4)  DEFAULT 1  COMMENT '1=aktif, 0=nonaktif',
   `keterangan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET = latin1;
 

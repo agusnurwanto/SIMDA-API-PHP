@@ -2,7 +2,12 @@
 
 define( 'APIKEY', 'xxxxxxxxx' ); // harus sama dengan yang disetting di wp-sipd APIKEY SIMDA
 
-define( 'DRIVER', false ); // driver SQL SERVER bisa diisi "freetds" untuk koneksi di OS linux. Nilai default false karena menggunakan PDO sqlsrv bawaan server windows
+/*
+	- Nilai default false karena menggunakan PDO sqlsrv bawaan server windows
+	- Driver SQL SERVER bisa diisi "freetds" untuk koneksi di OS linux. Video tutorial: https://youtu.be/ysA8ezncZ2s
+	- Driver juga bisa diisi "odbc" untuk koneksi di windows menggunakan DSN
+*/
+define( 'DRIVER', false );
 
 define( 'HOST_SQL', 'localhost' ); // host untuk database MYSQL
 define( 'DB_SQL', 'xxxxx' );
