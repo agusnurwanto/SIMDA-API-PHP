@@ -18,5 +18,8 @@ Optimasi aplikasi SIPD dengan chrome extension dan plugin wordpress Semoga berma
 - Isikan nama database simda di tabel database_simda
 - Akses index.php untuk melakukan testing koneksi SQL server
 
+### Foder query_simda
+- lra_bulanan.sql adalah query untuk menampilkan laporan realisasi perbulan. Ganti tanggal dibagian atas kode untuk merubah tanggal bulan.
+
 ### Video tutorial:
 - Integrasi data SIPD ke SIMDA keuangan https://youtu.be/vFOsAlnxmTo
