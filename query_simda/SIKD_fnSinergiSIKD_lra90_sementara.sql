@@ -26,7 +26,7 @@ RETURN (
 		R4.Nm_Rek90_4 AS namaAkunObjek,
 		RIGHT('0' + CONVERT(varchar, R5.Kd_Rek90_5), 2) AS kodeAkunRincian,
 		R5.Nm_Rek90_5 AS namaAkunRincian,
-		RIGHT('0' + CONVERT(varchar, R6.Kd_Rek90_6), 2) AS kodeAkunSub,
+		RIGHT('000' + CONVERT(varchar, R6.Kd_Rek90_6), 4) AS kodeAkunSub,
 		R6.Nm_Rek90_6 AS namaAkunSub,
 		A.Total AS nilaiRealisasi
 	FROM 
