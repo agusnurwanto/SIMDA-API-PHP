@@ -20,7 +20,7 @@ RETURN (
 		R1.Nm_Rek90_1 AS namaAkunUtama,
 		CONVERT(varchar, R2.Kd_Rek90_2) AS kodeAkunKelompok,
 		R2.Nm_Rek90_2 AS namaAkunKelompok,
-		CONVERT(varchar, R3.Kd_Rek90_3) AS kodeAkunJenis,
+		RIGHT('0' + CONVERT(varchar, R3.Kd_Rek90_3), 2) AS kodeAkunJenis,
 		R3.Nm_Rek90_3 AS namaAkunJenis,
 		RIGHT('0' + CONVERT(varchar, R4.Kd_Rek90_4), 2) AS kodeAkunObjek,
 		R4.Nm_Rek90_4 AS namaAkunObjek,
