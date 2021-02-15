@@ -1,0 +1,20 @@
+a. Buat fungsi pada server
+1. Eksekusi sql menggunakan query editor yang biasa dipakai
+
+b. Set query pada Sinergi
+1. Buka dan login ke aplikasi sinergi
+2. Buka menu Admin > Query Manajemen
+3. Tambah...., isi : 
+Aplikasi : SIMDA
+Jenis Data : LRA BULANAN
+Jenis COA : Permendagri 90 ...
+Query : SELECT * FROM fn_SinergiSIKD_lra90_sementara($tahun, $bulan)
+
+4. Test query.... pastikan muncul notif Query Anda Bisa Dijalankan.... warna ijo gede di bawah
+
+Done....
+Monggo dicoba.... aku dewe durung wwkwkkwkw....
+
+Trims
+
+
