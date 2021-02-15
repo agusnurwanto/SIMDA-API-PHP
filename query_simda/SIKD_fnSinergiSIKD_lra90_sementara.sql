@@ -1,3 +1,9 @@
+IF OBJECT_ID('fn_SinergiSIKD_lra90_sementara') IS NOT NULL
+BEGIN
+  DROP FUNCTION fn_SinergiSIKD_lra90_sementara;
+END
+GO
+
 CREATE FUNCTION fn_SinergiSIKD_lra90_sementara(@Tahun smallint, @Bulan tinyint)
 RETURNS TABLE
 WITH ENCRYPTION
@@ -110,3 +116,4 @@ RETURN (
 		Ref_Urusan M ON L.Kd_Urusan = M.Kd_Urusan INNER JOIN
 		Ref_Fungsi N ON L.Kd_Fungsi = N.Kd_Fungsi
 )
+GO
