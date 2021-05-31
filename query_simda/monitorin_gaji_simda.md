@@ -106,3 +106,33 @@ ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
 ```
 **Keterangan:**
 - Sebaiknya ditambahkan filter tahun anggaran untuk memastikan akumulasi anggaran sesuai dengan tahun anggaran yang diinginkan.
+
+
+## Menampilkan Realisasi Akumulasi Gaji Keseluruhan dengan nomor SPM dan uraiannya
+
+```
+SELECT x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub, y.Nm_Sub_Unit, x.no_spm, x.uraian, x.Anggaran
+from (
+	SELECT  a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.no_spm, a.Kd_Sub, p.uraian, sum(a.nilai) Anggaran
+	FROM ta_spm_rinc a
+		left join ta_spm p ON a.no_spm=p.no_spm
+		right join ta_sp2d s ON a.no_spm=s.no_spm
+	WHERE
+		a.Kd_Rek_1=5 and 
+		a.Kd_Rek_2=1 AND
+		a.Kd_Rek_3=1 AND
+		a.tahun=2021 AND
+		p.jn_spm=3 AND
+                s.no_spm is not null
+	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub, a.no_spm, p.uraian
+) x JOIN Ref_Sub_Unit y
+	on
+	y.Kd_Urusan=x.Kd_Urusan and 
+	y.Kd_Bidang=x.Kd_Bidang and 
+	y.Kd_Unit=x.Kd_Unit and 
+	y.Kd_Sub=x.Kd_Sub
+
+ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
+```
+**Keterangan:**
+- Sebaiknya ditambahkan filter tahun anggaran untuk memastikan akumulasi anggaran sesuai dengan tahun anggaran yang diinginkan.
