@@ -62,7 +62,7 @@ from (
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
-		a.tahun=1 AND
+		a.tahun=2021 AND
 		s.tgl_sp2d between '2021/01/01 00:00:00' and '2021/01/31 00:00:00'
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
@@ -89,7 +89,7 @@ from (
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
-		a.tahun=1
+		a.tahun=2021
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
 	on
