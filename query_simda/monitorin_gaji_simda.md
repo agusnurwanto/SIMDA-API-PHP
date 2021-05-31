@@ -57,12 +57,14 @@ SELECT x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub, y.Nm_Sub_Unit, x.Anggaran
 from (
 	SELECT  a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub, sum(a.nilai) Anggaran
 	FROM ta_spm_rinc a
+		left join ta_spm p ON a.no_spm=p.no_spm
 		right join ta_sp2d s ON a.no_spm=s.no_spm
 	WHERE
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
 		a.tahun=2021 AND
+		p.jn_spm=3 AND
 		s.tgl_sp2d between '2021/01/01 00:00:00' and '2021/01/31 00:00:00'
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
@@ -84,12 +86,14 @@ SELECT x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub, y.Nm_Sub_Unit, x.Anggaran
 from (
 	SELECT  a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub, sum(a.nilai) Anggaran
 	FROM ta_spm_rinc a
+		left join ta_spm p ON a.no_spm=p.no_spm
 		right join ta_sp2d s ON a.no_spm=s.no_spm
 	WHERE
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
-		a.tahun=2021
+		a.tahun=2021 AND
+		p.jn_spm=3
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
 	on
