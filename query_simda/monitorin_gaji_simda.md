@@ -44,7 +44,7 @@ from (
 
 ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
 ```
-`Keterangan:`
+**Keterangan:**
 - Untuk mengganti dasar data dengan merubah nilai dari kolom a.Kd_Perubahan=4 menyesuikan kode perubahan. 3=PRA RKA, 4=APBD, 5=Pergeseran APBD, 6=Perubahan APBD
 
 ## Menampilkan Realisasi Gaji Per Bulan
@@ -70,7 +70,7 @@ from (
 
 ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
 ```
-`Keterangan:`
+**Keterangan:**
 - Untuk merubah nilai bulan dengan mengganti nilai dari kolom s.tgl_sp2d between '2021/01/01 00:00:00' and '2021/01/31 00:00:00' menyesuikan rentang waktu yang diinginkan.
 
 ## Menampilkan Realisasi Akumulasi Gaji Keseluruhan
@@ -95,5 +95,5 @@ from (
 
 ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
 ```
-`Keterangan:`
+**Keterangan:**
 - Sebaiknya ditambahkan filter tahun anggaran untuk memastikan akumulasi anggaran sesuai dengan tahun anggaran yang diinginkan.
