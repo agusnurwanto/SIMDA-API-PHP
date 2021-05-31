@@ -10,7 +10,8 @@ from (
 	WHERE
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
-		a.Kd_Rek_3=1 
+		a.Kd_Rek_3=1 AND
+	    a.tahun=2021
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
 	on
@@ -33,7 +34,8 @@ from (
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
-	    a.Kd_Perubahan=4
+	    a.Kd_Perubahan=4 AND
+	    a.tahun=2021
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
 	on
@@ -46,6 +48,7 @@ ORDER BY x.Kd_Urusan, x.Kd_Bidang, x.Kd_Unit, x.Kd_Sub
 ```
 **Keterangan:**
 - Untuk mengganti dasar data dengan merubah nilai dari kolom a.Kd_Perubahan=4 menyesuikan kode perubahan. 3=PRA RKA, 4=APBD, 5=Pergeseran APBD, 6=Perubahan APBD
+- Tambah filter tahun=2021 untuk memastikan hanya menampilkan tahun anggaran yang sudah dipilih
 
 ## Menampilkan Realisasi Gaji Per Bulan
 
@@ -59,6 +62,7 @@ from (
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
 		a.Kd_Rek_3=1 AND
+		a.tahun=1 AND
 		s.tgl_sp2d between '2021/01/01 00:00:00' and '2021/01/31 00:00:00'
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
@@ -84,7 +88,8 @@ from (
 	WHERE
 		a.Kd_Rek_1=5 and 
 		a.Kd_Rek_2=1 AND
-		a.Kd_Rek_3=1
+		a.Kd_Rek_3=1 AND
+		a.tahun=1
 	GROUP BY a.Kd_Urusan, a.Kd_Bidang, a.Kd_Unit, a.Kd_Sub
 ) x JOIN Ref_Sub_Unit y
 	on
