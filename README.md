@@ -23,3 +23,4 @@ Optimasi aplikasi SIPD dengan chrome extension dan plugin wordpress Semoga berma
 
 ### Video tutorial:
 - Integrasi data SIPD ke SIMDA keuangan https://youtu.be/vFOsAlnxmTo
+- Setting Koneksi SIMDA API PHP menggunakan ODBC di Windows https://youtu.be/ojc6Dr6fZ8I
