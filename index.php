@@ -41,7 +41,10 @@ if(DRIVER){
 		$connection = "odbc:DRIVER=".DRIVER.";SERVERNAME=$hostname;DATABASE=$dbname";
 	}
 }else{
-	$connection = "sqlsrv:Server=$hostname;DATABASE=$dbname";
+	$connection = "sqlsrv:Server=$hostname;DATABASE=$dbname;";
+	if(TRUST_SERVER_CERTIFICATE) {
+		$connection .= "TrustServerCertificate=true;";
+	}
 }
 // print_r($connection); die();
 
