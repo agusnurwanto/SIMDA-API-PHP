@@ -9,6 +9,8 @@ define( 'APIKEY', 'xxxxxxxxx' ); // harus sama dengan yang disetting di wp-sipd 
 */
 define( 'DRIVER', false );
 
+define( 'TRUST_SERVER_CERTIFICATE', true );
+
 define( 'HOST_SQL', 'localhost' ); // host untuk database MYSQL
 define( 'DB_SQL', 'xxxxx' );
 define( 'USER_SQL', 'xxxxx' );
